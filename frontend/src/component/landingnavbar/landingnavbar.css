@@ -1,0 +1,20 @@
+.LandingNavbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: aliceblue;
+}
+
+.LandingNavbar button {
+    margin: 10px;
+    color: white;
+    background-color: #115375;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+}
+.LandingNavbar button:hover{
+    background-color: #33a7e2;
+    
+}

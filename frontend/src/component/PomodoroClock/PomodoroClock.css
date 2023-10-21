@@ -1,0 +1,28 @@
+.pomodoro {
+    text-align: center;
+    margin: 2rem;
+  }
+  
+  .timer {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  
+  .controls button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background-color: #0056b3;
+  }
+  
+  .controls button:active {
+    background-color: #0056b3;
+  }
+  

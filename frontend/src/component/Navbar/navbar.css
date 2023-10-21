@@ -1,0 +1,24 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: aliceblue;
+}
+
+.Navbar button {
+    margin: 10px;
+    color: white;
+    background-color: #115375;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.Navbar a{
+    padding-right: 40px;
+}
+.Navbar button:hover{
+    background-color: #33a7e2;
+    
+}

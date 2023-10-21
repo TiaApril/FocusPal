@@ -1,0 +1,6 @@
+.ribbon{
+    display: flex;
+    padding: 20px;
+    background-color: lightgray;
+    justify-content: space-evenly;
+}

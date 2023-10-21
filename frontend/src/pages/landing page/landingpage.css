@@ -1,0 +1,27 @@
+.landingpage{
+    display: flex;
+}
+
+.hero{
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.hero button{
+    color: white;
+    background-color: #115375;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.hero button:hover{
+    background-color: #33a7e2;
+}
+
+.heroImg{
+    margin: 80px;
+}

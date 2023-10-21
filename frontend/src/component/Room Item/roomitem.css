@@ -1,0 +1,27 @@
+.room-cards{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room-card{
+    padding: 30px;
+    margin: 10px;
+    background-color: aliceblue;
+    border-radius: 30px;
+}
+
+.room-card button {
+    margin: 10px;
+    color: white;
+    background-color: #115375;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.room-card button:hover{
+    background-color: #33a7e2;
+    
+}
