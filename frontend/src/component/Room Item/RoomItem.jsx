@@ -1,10 +1,17 @@
-import React from 'react'
-import './roomitem.css'
-import {roomData} from '../../data'
+import React from 'react';
+import { AddToCalendarButton } from 'add-to-calendar-button-react';
+import './roomitem.css';
+import { roomData } from '../../data';
 
-function RoomItem({ filter}) {
-    const now = new Date();
-    
+function RoomItem({ filter }) {
+  const now = new Date();
+
+  // Sort roomData by date in ascending order (nearest date first)
+  roomData.sort((roomA, roomB) => {
+    const roomStartDateA = new Date(roomA.date + 'T' + roomA.startTime);
+    const roomStartDateB = new Date(roomB.date + 'T' + roomB.startTime);
+    return roomStartDateA - roomStartDateB;
+  });
 
   return (
     <div className="room-cards">
@@ -40,13 +47,19 @@ function RoomItem({ filter}) {
               {roomStartDate <= now && roomEndDate >= now ? (
                 <button className="register-button">Register</button>
               ) : (
-                <button className="interested-button">Interested</button>
+                
+                <button className="interested-button">
+                   {/* <AddToCalendarButton
+                    name="Test-Event"
+                    startDate="2023-05-22"
+                   >Interested</AddToCalendarButton> */}
+                </button>
               )}
             </div>
           );
         })}
     </div>
-  )
+  );
 }
 
-export default RoomItem
+export default RoomItem;

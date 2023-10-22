@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './landingpage.css'
 import heroimg from '../../assets/Hero Image.png'
 import LandingNavBar from '../../component/landingnavbar/LandingNavBar'
@@ -17,7 +18,9 @@ function Landingpage() {
                 Join a Community of Motivated Indivuals Now
             </p>
             <div>
-                <button>Sign Up</button>
+                <Link to='/login'>
+                    <button>Sign Up</button>
+                </Link>
             </div>
         </div>
         <div className='heroImg'>

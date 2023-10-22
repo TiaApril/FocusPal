@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './landingnavbar.css'
 
 function LandingNavBar() {
@@ -8,8 +9,9 @@ function LandingNavBar() {
             <h1>Focus Pal</h1>
         </div>
         <div>
-            <button>Log In</button>
-            <button>Sign Up</button>
+                <Link to='/login'>
+                    <button>Log In</button>
+                </Link>
         </div>
 
     </div>
