@@ -3,7 +3,7 @@ import './roomitem.css';
 import {useNavigate} from 'react-router-dom';
 import { roomData } from '../../data';
 
-function RoomItem({ filter, room }) {
+function RoomItem({ filter }) {
   const now = new Date();
   const navigate = useNavigate();
 

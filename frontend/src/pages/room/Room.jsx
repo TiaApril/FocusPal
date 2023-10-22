@@ -1,20 +1,32 @@
-import React from 'react'
-import PomodoroClock from '../../component/PomodoroClock/PomodoroClock'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import PomodoroClock from '../../component/PomodoroClock/PomodoroClock';
+import LiveChat from '../../component/Chat/LiveChat';
+import { roomData } from '../../data';
+import './room.css'
 
-function Room({ match }) {
-  const roomId = match.params.id;
+
+function Room() {
+  const { roomId } = useParams();
+  const room = roomData.find((r) => r.id === parseInt(roomId));
+  console.log(room)
+
   return (
-    <>
-    <div>
-      <h1>Welcome</h1>
-      <p>Room ID: {roomId}</p>
-      {/* Add more room details here */}
+    <div className='room'>
+      <div className='room-main'>
+        <PomodoroClock/>
+        <LiveChat/>
+      </div>
+      <div className='room-description'>
+            <h1>Welcome to {room.title}</h1>
+            <p>Room ID: {room.id}</p>
+            <p>Subject: {room.subject}</p>
+            <p>Host: {room.host}</p>
+            <p>Date and Time: {room.date}, {room.startTime} - {room.endTime}</p>
+            {/* Add more room details here */}
+          </div>
     </div>
-    <div>
-      <PomodoroClock/>
-    </div>
-    </>
-  )
+  );
 }
 
-export default Room
+export default Room;

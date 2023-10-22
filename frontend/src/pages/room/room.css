@@ -1,0 +1,16 @@
+.room{
+    
+}
+.room-main{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 60px;
+}
+
+.room-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}

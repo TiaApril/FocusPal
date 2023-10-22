@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import "./PomodoroClock.css"
-
+import './PomodoroClock.css';
 
 function PomodoroClock() {
   const [session, setSession] = useState(25 * 60); // 25 minutes in seconds
   const [breakTime, setBreakTime] = useState(5 * 60); // 5 minutes in seconds
   const [timeLeft, setTimeLeft] = useState(session);
-  const [isActive, setIsActive] = useState(false); // Updated initial state
+  const [isActive, setIsActive] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
 
   const startTimer = () => {
@@ -38,22 +37,44 @@ function PomodoroClock() {
     return () => clearInterval(interval);
   }, [isActive, timeLeft, isBreak, session, breakTime]);
 
+  // Format timeLeft into minutes and seconds
+  const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+  const seconds = (timeLeft % 60).toString().padStart(2, '0');
+
   return (
-    <div className="pomodoro">
-      <h1>{isBreak ? 'Break' : 'Session'}</h1>
+    <div className="wrapper">
+      <h1 className="title">{isBreak ? 'Break' : 'Session'}</h1>
       <div className="timer">
-        <p>
-          {Math.floor(timeLeft / 60).toString().padStart(2, '0')}:
-          {(timeLeft % 60).toString().padStart(2, '0')}
-        </p>
+        <div className="time-part-wrapper">
+          <div className="time-part minutes tens">
+            {minutes[0]}
+          </div>
+          <div className="time-part minutes ones">
+            {minutes[1]}
+          </div>
+        </div>
+        <div className="time-part-wrapper">
+          <div className="time-part seconds tens">
+            {seconds[0]}
+          </div>
+          <div className="time-part seconds ones">
+            {seconds[1]}
+          </div>
+        </div>
       </div>
       <div className="controls">
-        <button onClick={startTimer}>Start</button>
-        <button onClick={pauseTimer}>Pause</button>
-        <button onClick={resetTimer}>Reset</button>
+        <button className="control-button" onClick={startTimer}>
+          Start
+        </button>
+        <button className="control-button" onClick={pauseTimer}>
+          Pause
+        </button>
+        <button className="control-button" onClick={resetTimer}>
+          Reset
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default PomodoroClock
+export default PomodoroClock;
