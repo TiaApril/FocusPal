@@ -4,6 +4,7 @@ import Room from './pages/room/Room'
 import Landingpage from './pages/landing page/Landingpage'
 import Home from './pages/home/Home'
 import Login from './component/login/Login'
+import RoomForm from './pages/roomform/RoomForm';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
               <Route path='/login' element={<Login/>}></Route>
               <Route path="/home" element={<Home/>}></Route>
               <Route path='/room/:roomId' element={<Room/>}></Route>
+              <Route path='/roomform' element={<RoomForm/>}></Route>
           </Routes>
       </div>
     </div>

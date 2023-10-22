@@ -4,6 +4,7 @@ import PomodoroClock from '../../component/PomodoroClock/PomodoroClock';
 import LiveChat from '../../component/Chat/LiveChat';
 import { roomData } from '../../data';
 import './room.css'
+import Navbar from '../../component/Navbar/Navbar';
 
 
 function Room() {
@@ -13,6 +14,7 @@ function Room() {
 
   return (
     <div className='room'>
+      <Navbar/>
       <div className='room-main'>
         <PomodoroClock/>
         <LiveChat/>

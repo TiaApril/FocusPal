@@ -3,7 +3,13 @@
     justify-content: space-between;
     padding: 10px 20px;
     background-color: aliceblue;
+    text-decoration: none;
 }
+
+.Navbar h1 a {
+    text-decoration: none;
+    color: darkblue;
+  }
 
 .Navbar button {
     margin: 10px;

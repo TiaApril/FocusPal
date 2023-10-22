@@ -1,12 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './navbar.css'
 
 function Navbar() {
   return (
     <div className='Navbar'>
-        <div>
-            <h1>Focuspal</h1>
-        </div>
+          <h1>
+            <Link to='/home'>Focuspal</Link>
+          </h1>
+          <Link to='/roomform'>
+          <button>Make Your Room</button>
+          </Link>
+          
         <div>
             <a>Profile</a>
             <button>Log Out</button>
