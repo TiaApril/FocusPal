@@ -1,10 +1,16 @@
 import React from 'react';
-import { AddToCalendarButton } from 'add-to-calendar-button-react';
 import './roomitem.css';
+import {useNavigate} from 'react-router-dom';
 import { roomData } from '../../data';
 
-function RoomItem({ filter }) {
+function RoomItem({ filter, room }) {
   const now = new Date();
+  const navigate = useNavigate();
+
+  const handleRegisterClick = (roomId) => {
+    // Redirect to the Room page when the "Register" button is clicked
+    navigate(`/room/${roomId}`);
+  };
 
   // Sort roomData by date in ascending order (nearest date first)
   roomData.sort((roomA, roomB) => {
@@ -45,14 +51,14 @@ function RoomItem({ filter }) {
               <p>Host: {room.host}</p>
               <p>Date and Time: {room.date}, {room.startTime} - {room.endTime}</p>
               {roomStartDate <= now && roomEndDate >= now ? (
-                <button className="register-button">Register</button>
+                <button 
+                className="register-button"
+                  onClick={() => handleRegisterClick(room.id)}
+                  >Register</button>
               ) : (
                 
                 <button className="interested-button">
-                   {/* <AddToCalendarButton
-                    name="Test-Event"
-                    startDate="2023-05-22"
-                   >Interested</AddToCalendarButton> */}
+                   Interested In
                 </button>
               )}
             </div>
